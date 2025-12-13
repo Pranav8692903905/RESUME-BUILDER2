@@ -4,7 +4,6 @@ import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
-import { AuthProvider } from "@/components/auth/auth-context"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -24,9 +23,7 @@ export default function RootLayout({
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <AuthProvider>
-          <Suspense fallback={null}>{children}</Suspense>
-        </AuthProvider>
+        <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>
     </html>

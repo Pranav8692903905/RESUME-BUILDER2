@@ -5,12 +5,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, FileText, BarChart3, Target, Zap, Github, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
-import { useAuth } from "@/components/auth/auth-context"
 import { ScrollAnimation } from "@/components/scroll-animation"
 
 export default function Home() {
-  const { isAuthenticated } = useAuth()
-
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -37,36 +34,14 @@ export default function Home() {
             <Link href="#about" className="text-muted-foreground hover:text-accent transition-colors font-medium">
               About
             </Link>
-            {isAuthenticated ? (
-              <Link href="/dashboard">
-                <Button
-                  size="sm"
-                  className="bg-gradient-to-r from-primary via-secondary to-accent hover:from-accent hover:via-primary hover:to-secondary transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
-                  Dashboard
-                </Button>
-              </Link>
-            ) : (
-              <>
-                <Link href="/auth">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="border-primary/30 hover:bg-primary/10 bg-transparent text-primary hover:text-primary font-medium"
-                  >
-                    Sign In
-                  </Button>
-                </Link>
-                <Link href="/auth">
-                  <Button
-                    size="sm"
-                    className="bg-gradient-to-r from-primary via-secondary to-accent hover:from-accent hover:via-primary hover:to-secondary transition-all duration-300 shadow-lg hover:shadow-xl"
-                  >
-                    Get Started
-                  </Button>
-                </Link>
-              </>
-            )}
+            <Link href="/dashboard">
+              <Button
+                size="sm"
+                className="bg-gradient-to-r from-primary via-secondary to-accent hover:from-accent hover:via-primary hover:to-secondary transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Dashboard
+              </Button>
+            </Link>
           </nav>
         </div>
       </header>
@@ -102,7 +77,7 @@ export default function Home() {
 
           <ScrollAnimation delay={300}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href={isAuthenticated ? "/dashboard" : "/auth"}>
+              <Link href="/builder">
                 <Button
                   size="lg"
                   className="text-lg px-8 bg-gradient-to-r from-primary via-secondary to-accent hover:from-accent hover:via-primary hover:to-secondary shadow-xl hover:shadow-2xl transition-all duration-300 color-pulse"
@@ -111,7 +86,7 @@ export default function Home() {
                   Build Resume Now
                 </Button>
               </Link>
-              <Link href={isAuthenticated ? "/dashboard" : "/auth"}>
+              <Link href="/analyzer">
                 <Button
                   variant="outline"
                   size="lg"
