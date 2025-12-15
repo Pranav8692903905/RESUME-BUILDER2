@@ -4,11 +4,15 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Progress } from "@/components/ui/progress"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Save, Download, Eye } from "lucide-react"
 import { ResumeEditor } from "./resume-editor"
 import { ResumePreview } from "./resume-preview"
 import { TemplateSelector } from "./template-selector"
+import { ResumeAnalytics } from "./resume-analytics"
+import { TipsPanel } from "./tips-panel"
+import { ContentLibrary } from "./content-library"
 import { useResume } from "./resume-context"
 import type { Resume } from "./resume-context"
 
@@ -21,6 +25,39 @@ declare global {
 export function ResumeBuilder() {
   const [activeTab, setActiveTab] = useState("edit")
   const { currentResume, setCurrentResume, saveResume } = useResume()
+
+  const calculateCompletion = () => {
+    if (!currentResume) return 0
+    let completed = 0
+    let total = 0
+
+    currentResume.sections.forEach((section) => {
+      switch (section.type) {
+        case "personal":
+          total += 4
+          if (section.content.fullName) completed++
+          if (section.content.email) completed++
+          if (section.content.phone) completed++
+          if (section.content.location) completed++
+          break
+        case "summary":
+          total += 1
+          if (section.content.text && section.content.text.length > 50) completed++
+          break
+        case "experience":
+        case "education":
+        case "skills":
+        case "projects":
+          total += 1
+          if (section.content.items && section.content.items.length > 0) completed++
+          break
+      }
+    })
+
+    return Math.round((completed / total) * 100)
+  }
+
+  const completionPercentage = calculateCompletion()
 
   const handleCreateNew = (template: "modern" | "minimal" | "corporate") => {
     const newResume: Resume = {
@@ -138,10 +175,14 @@ export function ResumeBuilder() {
       
       {/* Header */}
       <header className="border-b border-border bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 backdrop-blur-sm sticky top-0 z-50 relative shadow-xl">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <h1 className="text-xl font-semibold text-white">{currentResume.title}</h1>
+              <div className="flex items-center gap-2">
+                <Progress value={completionPercentage} className="w-24 h-2" />
+                <span className="text-xs text-gray-300 font-medium">{completionPercentage}%</span>
+              </div>
               <Badge 
                 variant="secondary" 
                 className="capitalize bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border-blue-500/40 text-blue-300"
@@ -208,11 +249,14 @@ export function ResumeBuilder() {
           </TabsList>
 
           <TabsContent value="edit" className="mt-6">
-            <div className="grid lg:grid-cols-2 gap-6">
+            <div className="grid lg:grid-cols-3 gap-6">
               <div className="space-y-6">
                 <ResumeEditor />
               </div>
-              <div className="hidden lg:block">
+              <div className="hidden lg:block space-y-6">
+                <ResumeAnalytics resume={currentResume} />
+              </div>
+              <div className="hidden lg:block space-y-6">
                 <Card className="sticky top-24 border-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 backdrop-blur-md shadow-2xl overflow-hidden">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(168,85,247,0.1),transparent_50%)]" />
                   <CardHeader className="relative z-10">
@@ -227,6 +271,9 @@ export function ResumeBuilder() {
                     </div>
                   </CardContent>
                 </Card>
+                <div className="sticky top-[520px]">
+                  <TipsPanel />
+                </div>
               </div>
             </div>
           </TabsContent>
@@ -315,6 +362,16 @@ export function ResumeBuilder() {
               </Card>
             </div>
           </TabsContent>
+
+          {/* Footer Content Library */}
+          <div className="mt-10">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Content Library
+              </h2>
+              <ContentLibrary />
+            </div>
+          </div>
         </Tabs>
       </div>
     </div>
