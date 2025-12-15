@@ -373,6 +373,60 @@ export function ResumeBuilder() {
             </div>
           </div>
         </Tabs>
+
+        {/* Privacy & Information Footer */}
+        <footer className="mt-16 border-t border-slate-700/50 bg-gradient-to-b from-transparent to-slate-900/50">
+          <div className="max-w-6xl mx-auto px-4 py-12">
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              <div>
+                <h3 className="text-lg font-semibold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-3">
+                  About Resume Builder
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Create professional, ATS-friendly resumes with our intuitive builder. Choose from modern templates, 
+                  get real-time analytics, and access curated content to make your resume stand out.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-3">
+                  Your Privacy Matters
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  All your resume data is stored locally in your browser. We don't upload, track, or share your personal 
+                  information with any third parties. Your data stays private and secure on your device.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-3">
+                  Features at a Glance
+                </h3>
+                <ul className="text-sm text-gray-400 space-y-2">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    Multiple professional templates
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    Real-time completion tracking
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    Content library & power words
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    Export to PDF instantly
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="pt-6 border-t border-slate-800/50 text-center">
+              <p className="text-xs text-gray-500">
+                © 2025 Resume Builder. All rights reserved. • Your privacy is protected - all data stored locally.
+              </p>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   )

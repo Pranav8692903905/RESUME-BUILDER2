@@ -476,6 +476,60 @@ export function JobMatcher() {
             </div>
           </div>
         )}
+
+        {/* Privacy & Information Footer */}
+        <footer className="mt-16 border-t border-slate-700/50 bg-gradient-to-b from-transparent to-slate-900/50">
+          <div className="max-w-6xl mx-auto px-4 py-12">
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              <div>
+                <h3 className="text-lg font-semibold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-3">
+                  About Job Matcher
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Smart AI matching technology that compares your resume against job descriptions. Identify skill gaps, 
+                  get tailored recommendations, and understand exactly what employers are looking for.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-3">
+                  Privacy & Confidentiality
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Your resume and job descriptions are processed securely and never stored permanently. We respect your 
+                  privacy and don't share your information with employers or third parties without your explicit consent.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-3">
+                  Matching Insights
+                </h3>
+                <ul className="text-sm text-gray-400 space-y-2">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    Skill compatibility analysis
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    Gap identification & advice
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    Keyword optimization tips
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    Personalized recommendations
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="pt-6 border-t border-slate-800/50 text-center">
+              <p className="text-xs text-gray-500">
+                © 2025 Job Matcher. All rights reserved. • Your data is secure and confidential.
+              </p>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   )

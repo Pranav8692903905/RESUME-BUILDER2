@@ -523,6 +523,60 @@ export function ResumeAnalyzer() {
             </div>
           </div>
         )}
+
+        {/* Privacy & Information Footer */}
+        <footer className="mt-16 border-t border-slate-700/50 bg-gradient-to-b from-transparent to-slate-900/50">
+          <div className="max-w-6xl mx-auto px-4 py-12">
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              <div>
+                <h3 className="text-lg font-semibold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-3">
+                  About Resume Analyzer
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Our AI-powered analyzer evaluates your resume against industry standards and ATS requirements. 
+                  Get detailed insights on formatting, keywords, content quality, and actionable suggestions to improve your resume.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-3">
+                  Your Privacy & Data Security
+                </h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Your resume is never stored on our servers. Analysis happens in real-time and all data is processed securely. 
+                  We don't share, sell, or use your information for any purpose other than providing analysis results.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-3">
+                  What We Analyze
+                </h3>
+                <ul className="text-sm text-gray-400 space-y-2">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    ATS compatibility & formatting
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    Keyword optimization
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    Content quality & impact
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                    Section completeness
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="pt-6 border-t border-slate-800/50 text-center">
+              <p className="text-xs text-gray-500">
+                © 2025 Resume Analyzer. All rights reserved. • Secure analysis - no data stored or shared.
+              </p>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   )
