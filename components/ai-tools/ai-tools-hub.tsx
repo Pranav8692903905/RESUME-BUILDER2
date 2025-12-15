@@ -590,8 +590,10 @@ Just ask me about any of these topics, and I'll provide detailed guidance!`
       </header>
 
       <div className="container mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-4">AI-Powered Career Tools</h2>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+            AI-Powered Career Tools
+          </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Leverage artificial intelligence to create compelling career documents and optimize your professional
             presence
@@ -599,16 +601,25 @@ Just ask me about any of these topics, and I'll provide detailed guidance!`
         </div>
 
         <Tabs defaultValue="cover-letter" className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="cover-letter" className="flex items-center space-x-2">
+          <TabsList className="grid w-full grid-cols-3 bg-gradient-to-r from-slate-800 to-slate-900 p-2 rounded-2xl border border-slate-700">
+            <TabsTrigger 
+              value="cover-letter" 
+              className="flex items-center space-x-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white rounded-xl transition-all duration-300"
+            >
               <FileText className="h-4 w-4" />
               <span>Cover Letter</span>
             </TabsTrigger>
-            <TabsTrigger value="linkedin-bio" className="flex items-center space-x-2">
+            <TabsTrigger 
+              value="linkedin-bio" 
+              className="flex items-center space-x-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-pink-500 data-[state=active]:text-white rounded-xl transition-all duration-300"
+            >
               <Linkedin className="h-4 w-4" />
               <span>LinkedIn Bio</span>
             </TabsTrigger>
-            <TabsTrigger value="interview-prep" className="flex items-center space-x-2">
+            <TabsTrigger 
+              value="interview-prep" 
+              className="flex items-center space-x-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-500 data-[state=active]:to-teal-500 data-[state=active]:text-white rounded-xl transition-all duration-300"
+            >
               <MessageSquare className="h-4 w-4" />
               <span>Interview Prep</span>
             </TabsTrigger>
@@ -624,28 +635,43 @@ Just ask me about any of these topics, and I'll provide detailed guidance!`
 
           <TabsContent value="interview-prep" className="mt-8">
             <div className="max-w-4xl mx-auto">
-              <Card>
-                <CardHeader className="text-center">
-                  <CardTitle className="flex items-center justify-center space-x-2">
-                    <MessageSquare className="h-6 w-6 text-primary" />
+              <Card className="border-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 backdrop-blur-md shadow-2xl overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.15),transparent_50%)]" />
+                <CardHeader className="text-center relative z-10">
+                  <div className="h-16 w-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-emerald-500/40">
+                    <MessageSquare className="h-8 w-8 text-emerald-400" />
+                  </div>
+                  <CardTitle className="flex items-center justify-center space-x-2 text-white text-2xl">
                     <span>Interview Preparation Assistant</span>
                   </CardTitle>
-                  <CardDescription>
+                  <CardDescription className="text-gray-300 mt-2">
                     Coming soon! AI-powered interview question generator and practice sessions
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="text-center py-12">
-                  <div className="bg-muted/30 rounded-lg p-8">
-                    <MessageSquare className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold mb-2">Interview Prep Tool</h3>
-                    <p className="text-muted-foreground mb-4">
+                <CardContent className="text-center py-12 relative z-10">
+                  <div className="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-2xl p-8 border border-emerald-500/20">
+                    <MessageSquare className="h-16 w-16 text-emerald-400 mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold mb-2 text-white">Interview Prep Tool</h3>
+                    <p className="text-gray-300 mb-4">
                       This feature is currently in development. Soon you'll be able to:
                     </p>
-                    <ul className="text-sm text-muted-foreground space-y-2 max-w-md mx-auto">
-                      <li>• Generate common interview questions for your role</li>
-                      <li>• Practice with AI-powered mock interviews</li>
-                      <li>• Get feedback on your answers</li>
-                      <li>• Prepare for behavioral and technical questions</li>
+                    <ul className="text-sm text-gray-300 space-y-2 max-w-md mx-auto text-left">
+                      <li className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-emerald-400" />
+                        Generate common interview questions for your role
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-emerald-400" />
+                        Practice with AI-powered mock interviews
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-emerald-400" />
+                        Get feedback on your answers
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-emerald-400" />
+                        Prepare for behavioral and technical questions
+                      </li>
                     </ul>
                   </div>
                 </CardContent>

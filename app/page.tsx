@@ -9,9 +9,22 @@ import { ScrollAnimation } from "@/components/scroll-animation"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Animated Glow Background */}
+      <div className="pointer-events-none absolute inset-0">
+        {/* Blue glow top-left */}
+        <div className="absolute -top-40 -left-40 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse opacity-50" />
+        {/* Green glow top-right */}
+        <div className="absolute -top-20 -right-40 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl animate-pulse opacity-40 animation-delay-2000" />
+        {/* Purple glow bottom-left */}
+        <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse opacity-50 animation-delay-4000" />
+        {/* Pink glow bottom-right */}
+        <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-pink-500/15 rounded-full blur-3xl animate-pulse opacity-40 animation-delay-1000" />
+        {/* Center radial gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-background/30 to-background" />
+      </div>
       {/* Header */}
-      <header className="border-b border-primary/20 bg-gradient-to-r from-card/90 via-card/95 to-card/90 backdrop-blur-md sticky top-0 z-50">
+      <header className="relative z-10 border-b border-primary/20 bg-gradient-to-r from-card/90 via-card/95 to-card/90 backdrop-blur-md sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="h-8 w-8 bg-gradient-to-br from-primary via-secondary to-accent rounded-lg flex items-center justify-center shadow-lg">
@@ -47,8 +60,8 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10"></div>
+      <section className="py-20 px-4 relative z-10 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(99,102,241,0.12),transparent_50%),radial-gradient(circle_at_70%_70%,rgba(16,185,129,0.08),transparent_50%)] pointer-events-none" />
         <div className="container mx-auto text-center max-w-4xl relative">
           <ScrollAnimation>
             <Badge
@@ -108,7 +121,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 px-4 bg-gradient-to-b from-card/50 via-muted/30 to-transparent">
+      <section id="features" className="py-20 px-4 relative z-10 bg-gradient-to-b from-card/50 via-muted/30 to-transparent">
         <div className="container mx-auto">
           <ScrollAnimation>
             <div className="text-center mb-16">
@@ -216,7 +229,7 @@ export default function Home() {
       </section>
 
       {/* Templates Section */}
-      <section id="templates" className="py-20 px-4">
+      <section id="templates" className="py-20 px-4 relative z-10">
         <div className="container mx-auto">
           <ScrollAnimation>
             <div className="text-center mb-16">
@@ -270,7 +283,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 gradient-bg relative overflow-hidden">
+      <section className="py-20 px-4 gradient-bg relative z-10 overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="container mx-auto text-center relative">
           <ScrollAnimation>
@@ -297,7 +310,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="py-16 px-4 bg-gradient-to-br from-card/80 via-muted/50 to-card/80">
+      <section id="about" className="py-16 px-4 relative z-10 bg-gradient-to-br from-card/80 via-muted/50 to-card/80">
         <div className="container mx-auto">
           <ScrollAnimation>
             <div className="text-center mb-12">
@@ -357,7 +370,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-primary/20 bg-gradient-to-r from-card/90 via-card/95 to-card/90 backdrop-blur-sm py-12 px-4">
+      <footer className="relative z-10 border-t border-primary/20 bg-gradient-to-r from-card/90 via-card/95 to-card/90 backdrop-blur-sm py-12 px-4">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">

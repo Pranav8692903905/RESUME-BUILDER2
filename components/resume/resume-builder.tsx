@@ -112,10 +112,12 @@ export function ResumeBuilder() {
         </div>
         
         {/* Content */}
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold mb-2">Choose a Template</h1>
-            <p className="text-muted-foreground">Select a professional template to get started</p>
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              Choose a Template
+            </h1>
+            <p className="text-muted-foreground text-lg">Select a professional template to get started with your resume</p>
           </div>
           <TemplateSelector onSelect={handleCreateNew} />
         </div>
@@ -135,26 +137,44 @@ export function ResumeBuilder() {
       </div>
       
       {/* Header */}
-      <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50 relative">
+      <header className="border-b border-border bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 backdrop-blur-sm sticky top-0 z-50 relative shadow-xl">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <h1 className="text-xl font-semibold">{currentResume.title}</h1>
-              <Badge variant="secondary" className="capitalize">
+              <h1 className="text-xl font-semibold text-white">{currentResume.title}</h1>
+              <Badge 
+                variant="secondary" 
+                className="capitalize bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border-blue-500/40 text-blue-300"
+              >
                 {currentResume.template}
               </Badge>
             </div>
 
-            <div className="flex items-center space-x-2">
-              <Button variant="outline" size="sm" onClick={handleSave}>
+            <div className="flex items-center gap-2">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={handleSave}
+                className="border-slate-600 text-white hover:bg-slate-800 transition-all duration-300"
+              >
                 <Save className="h-4 w-4 mr-2" />
                 Save
               </Button>
-              <Button variant="outline" size="sm" onClick={handleDownload}>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={handleDownload}
+                className="border-emerald-600 text-emerald-300 hover:bg-emerald-500/20 transition-all duration-300"
+              >
                 <Download className="h-4 w-4 mr-2" />
                 Download PDF
               </Button>
-              <Button variant="outline" size="sm" onClick={() => setActiveTab("preview")}>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={() => setActiveTab("preview")}
+                className="border-purple-600 text-purple-300 hover:bg-purple-500/20 transition-all duration-300"
+              >
                 <Eye className="h-4 w-4 mr-2" />
                 Preview
               </Button>
@@ -166,10 +186,25 @@ export function ResumeBuilder() {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-6 relative z-10">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="edit">Edit</TabsTrigger>
-            <TabsTrigger value="preview">Preview</TabsTrigger>
-            <TabsTrigger value="settings">Settings</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-3 bg-gradient-to-r from-slate-800 to-slate-900 p-2 rounded-2xl border border-slate-700">
+            <TabsTrigger 
+              value="edit"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white rounded-xl transition-all duration-300"
+            >
+              Edit
+            </TabsTrigger>
+            <TabsTrigger 
+              value="preview"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-pink-500 data-[state=active]:text-white rounded-xl transition-all duration-300"
+            >
+              Preview
+            </TabsTrigger>
+            <TabsTrigger 
+              value="settings"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-emerald-500 data-[state=active]:to-teal-500 data-[state=active]:text-white rounded-xl transition-all duration-300"
+            >
+              Settings
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="edit" className="mt-6">
@@ -178,12 +213,16 @@ export function ResumeBuilder() {
                 <ResumeEditor />
               </div>
               <div className="hidden lg:block">
-                <Card className="sticky top-24">
-                  <CardHeader>
-                    <CardTitle className="text-sm font-medium">Live Preview</CardTitle>
+                <Card className="sticky top-24 border-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 backdrop-blur-md shadow-2xl overflow-hidden">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(168,85,247,0.1),transparent_50%)]" />
+                  <CardHeader className="relative z-10">
+                    <CardTitle className="text-sm font-medium text-white flex items-center gap-2">
+                      <Eye className="h-4 w-4 text-purple-400" />
+                      Live Preview
+                    </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <div className="scale-50 origin-top-left w-[200%] h-[600px] overflow-hidden">
+                  <CardContent className="relative z-10">
+                    <div className="scale-50 origin-top-left w-[200%] h-[600px] overflow-hidden rounded-lg border border-slate-700">
                       <ResumePreview />
                     </div>
                   </CardContent>
@@ -202,13 +241,14 @@ export function ResumeBuilder() {
 
           <TabsContent value="settings" className="mt-6">
             <div className="max-w-2xl mx-auto">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Resume Settings</CardTitle>
+              <Card className="border-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 backdrop-blur-md shadow-2xl overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.1),transparent_50%)]" />
+                <CardHeader className="relative z-10">
+                  <CardTitle className="text-white">Resume Settings</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
+                <CardContent className="space-y-6 relative z-10">
                   <div>
-                    <label className="text-sm font-medium">Template</label>
+                    <label className="text-sm font-medium text-white">Template</label>
                     <TemplateSelector
                       onSelect={(template) => {
                         if (currentResume) {
@@ -220,8 +260,8 @@ export function ResumeBuilder() {
                   </div>
                   
                   <div className="space-y-3">
-                    <label className="text-sm font-medium block">Header Color</label>
-                    <p className="text-xs text-muted-foreground mb-3">Choose a color for your resume header and section titles</p>
+                    <label className="text-sm font-medium block text-white">Header Color</label>
+                    <p className="text-xs text-gray-300 mb-3">Choose a color for your resume header and section titles</p>
                     <div className="grid grid-cols-8 gap-3">
                       {[
                         { name: "Blue", value: "#3b82f6" },
@@ -244,17 +284,17 @@ export function ResumeBuilder() {
                               setCurrentResume({ ...currentResume, headerColor: color.value })
                             }
                           }}
-                          className={`w-12 h-12 rounded-lg transition-all hover:scale-110 ${
+                          className={`w-12 h-12 rounded-lg transition-all hover:scale-110 border-2 ${
                             currentResume.headerColor === color.value
-                              ? "ring-2 ring-offset-2 ring-primary"
-                              : "hover:ring-2 hover:ring-offset-2 hover:ring-gray-300"
+                              ? "ring-2 ring-offset-2 ring-offset-slate-900 ring-blue-500 border-blue-500"
+                              : "hover:ring-2 hover:ring-offset-2 hover:ring-offset-slate-900 hover:ring-gray-400 border-slate-700"
                           }`}
                           style={{ backgroundColor: color.value }}
                           title={color.name}
                         />
                       ))}
                     </div>
-                    <div className="flex items-center gap-2 mt-3">
+                    <div className="flex items-center gap-2 mt-3 bg-slate-800/50 p-3 rounded-xl border border-slate-700">
                       <input
                         type="color"
                         value={currentResume.headerColor || "#3b82f6"}
@@ -266,8 +306,8 @@ export function ResumeBuilder() {
                         className="w-12 h-12 rounded-lg cursor-pointer"
                       />
                       <div className="flex-1">
-                        <p className="text-xs font-medium">Custom Color</p>
-                        <p className="text-xs text-muted-foreground">{currentResume.headerColor || "#3b82f6"}</p>
+                        <p className="text-xs font-medium text-white">Custom Color</p>
+                        <p className="text-xs text-gray-400">{currentResume.headerColor || "#3b82f6"}</p>
                       </div>
                     </div>
                   </div>

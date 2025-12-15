@@ -20,18 +20,21 @@ export default function DashboardPage() {
 
   return (
     <div
-      className="min-h-screen"
+      className="min-h-screen relative overflow-hidden"
       style={{
         backgroundImage: "url('/AI-Job.avif')",
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'center bottom',
         backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
         backgroundColor: 'rgba(2,6,23,0.6)',
         backgroundBlendMode: 'overlay',
       }}
     >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.18),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(16,185,129,0.18),transparent_30%),radial-gradient(circle_at_50%_80%,rgba(236,72,153,0.14),transparent_35%)] blur-3xl" />
+
       {/* Header */}
-      <header className="border-b border-primary/20 bg-gradient-to-r from-slate-900/90 via-slate-900/95 to-slate-900/90 backdrop-blur-md">
+      <header className="relative z-10 border-b border-primary/20 bg-gradient-to-r from-slate-900/90 via-slate-900/95 to-slate-900/90 backdrop-blur-md">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
@@ -48,7 +51,7 @@ export default function DashboardPage() {
       </header>
 
         {/* Main Content */}
-      <div className="container mx-auto px-4 py-8">
+      <div className="relative z-10 container mx-auto px-4 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Your Dashboard

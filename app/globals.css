@@ -211,6 +211,15 @@ html {
   }
 }
 
+@keyframes shimmer {
+  0% {
+    background-position: -250% 0;
+  }
+  100% {
+    background-position: 250% 0;
+  }
+}
+
 .gradient-bg {
   background: linear-gradient(-45deg, #d97706, #be123c, #0891b2, #ec4899);
   background-size: 400% 400%;
@@ -219,6 +228,10 @@ html {
 
 .color-pulse {
   animation: colorPulse 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
 }
 
 /* Modern form styling */
