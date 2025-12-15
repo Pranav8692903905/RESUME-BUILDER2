@@ -72,14 +72,15 @@ export function RecommendationsList({ recommendations }: RecommendationsListProp
       </div>
 
       {sortedRecommendations.map((rec, index) => (
-        <Card key={index} className="border-l-4 border-l-primary/20">
-          <CardHeader className="pb-3">
+        <Card key={index} className="border-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 backdrop-blur-md shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border-l-4 border-l-blue-500/40">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.08),transparent_50%)]" />
+          <CardHeader className="pb-3 relative z-10">
             <div className="flex items-start justify-between">
               <div className="flex items-center space-x-3">
-                {getIcon(rec.type)}
+                <div className="bg-blue-500/20 p-2 rounded-lg border border-blue-500/40">{getIcon(rec.type)}</div>
                 <div>
-                  <CardTitle className="text-base">{rec.title}</CardTitle>
-                  <CardDescription className="text-sm capitalize">{rec.type} Recommendation</CardDescription>
+                  <CardTitle className="text-base text-white">{rec.title}</CardTitle>
+                  <CardDescription className="text-sm capitalize text-gray-300">{rec.type} Recommendation</CardDescription>
                 </div>
               </div>
               <div className="flex items-center space-x-2">

@@ -76,25 +76,26 @@ Sincerely,
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       <div className="text-center">
-        <h2 className="text-3xl font-bold mb-4">AI Cover Letter Generator</h2>
-        <p className="text-muted-foreground text-lg">Create personalized cover letters that stand out to employers</p>
+        <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">AI Cover Letter Generator</h2>
+        <p className="text-gray-300 text-lg">Create personalized cover letters that stand out to employers</p>
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="form">Input Details</TabsTrigger>
-          <TabsTrigger value="result" disabled={!generatedLetter}>
+        <TabsList className="grid w-full grid-cols-2 bg-gradient-to-r from-slate-800 to-slate-900 p-2 rounded-2xl border border-slate-700">
+          <TabsTrigger value="form" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white rounded-xl transition-all duration-300">Input Details</TabsTrigger>
+          <TabsTrigger value="result" disabled={!generatedLetter} className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-pink-500 data-[state=active]:text-white rounded-xl transition-all duration-300">
             Generated Letter
           </TabsTrigger>
         </TabsList>
 
         <TabsContent value="form" className="mt-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Job & Company Information</CardTitle>
-              <CardDescription>Provide details about the position and company you're applying to</CardDescription>
+          <Card className="border-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 backdrop-blur-md shadow-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.1),transparent_50%)]" />
+            <CardHeader className="relative z-10">
+              <CardTitle className="text-white text-xl">Job & Company Information</CardTitle>
+              <CardDescription className="text-gray-300">Provide details about the position and company you're applying to</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-6 relative z-10">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="jobTitle">Job Title</Label>

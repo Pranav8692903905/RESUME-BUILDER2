@@ -78,25 +78,26 @@ Open to networking and new opportunities in ${formData.industry}.`,
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       <div className="text-center">
-        <h2 className="text-3xl font-bold mb-4">LinkedIn Bio Generator</h2>
-        <p className="text-muted-foreground text-lg">Create compelling LinkedIn summaries that attract opportunities</p>
+        <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">LinkedIn Bio Generator</h2>
+        <p className="text-gray-300 text-lg">Create compelling LinkedIn summaries that attract opportunities</p>
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="form">Input Details</TabsTrigger>
-          <TabsTrigger value="result" disabled={generatedBios.length === 0}>
+        <TabsList className="grid w-full grid-cols-2 bg-gradient-to-r from-slate-800 to-slate-900 p-2 rounded-2xl border border-slate-700">
+          <TabsTrigger value="form" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-pink-500 data-[state=active]:text-white rounded-xl transition-all duration-300">Input Details</TabsTrigger>
+          <TabsTrigger value="result" disabled={generatedBios.length === 0} className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white rounded-xl transition-all duration-300">
             Generated Bios
           </TabsTrigger>
         </TabsList>
 
         <TabsContent value="form" className="mt-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Professional Information</CardTitle>
-              <CardDescription>Tell us about your professional background and goals</CardDescription>
+          <Card className="border-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 backdrop-blur-md shadow-2xl overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(168,85,247,0.1),transparent_50%)]" />
+            <CardHeader className="relative z-10">
+              <CardTitle className="text-white text-xl">Professional Information</CardTitle>
+              <CardDescription className="text-gray-300">Tell us about your professional background and goals</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-6 relative z-10">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="name">Full Name</Label>

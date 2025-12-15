@@ -52,71 +52,83 @@ export default function DashboardPage() {
 
         {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+        <div className="mb-12 text-center">
+          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-pulse">
             Your Dashboard
           </h1>
-          <p className="text-muted-foreground">Manage your resumes and track your job search progress</p>
+          <p className="text-gray-300 text-lg">Manage your resumes and track your job search progress</p>
         </div>
 
         
 
         {/* Quick Actions */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <Link href="/builder">
-            <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer glass-effect border-primary/20 hover:border-primary/40 group">
-              <CardHeader>
-                <div className="flex items-center space-x-2">
-                  <div className="h-10 w-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center group-hover:from-secondary group-hover:to-accent transition-all duration-300 shadow-lg">
-                    <Plus className="h-5 w-5 text-white" />
+            <Card className="border-0 bg-gradient-to-br from-blue-500/10 via-slate-800/80 to-blue-600/10 backdrop-blur-md shadow-2xl overflow-hidden hover:shadow-blue-500/30 transition-all duration-300 cursor-pointer hover:scale-105 group">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.2),transparent_50%)]" />
+              <CardHeader className="relative z-10">
+                <div className="flex items-center space-x-3">
+                  <div className="h-12 w-12 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Plus className="h-6 w-6 text-white" />
                   </div>
-                  <CardTitle className="text-lg text-primary">Create Resume</CardTitle>
+                  <div>
+                    <CardTitle className="text-lg text-white">Create Resume</CardTitle>
+                    <CardDescription className="text-gray-300 text-xs">Build from scratch</CardDescription>
+                  </div>
                 </div>
-                <CardDescription>Build a professional resume from scratch</CardDescription>
               </CardHeader>
             </Card>
           </Link>
 
           <Link href="/analyzer">
-            <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer glass-effect border-secondary/20 hover:border-secondary/40 group">
-              <CardHeader>
-                <div className="flex items-center space-x-2">
-                  <div className="h-10 w-10 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center group-hover:from-accent group-hover:to-primary transition-all duration-300 shadow-lg">
-                    <BarChart3 className="h-5 w-5 text-white" />
+            <Card className="border-0 bg-gradient-to-br from-purple-500/10 via-slate-800/80 to-purple-600/10 backdrop-blur-md shadow-2xl overflow-hidden hover:shadow-purple-500/30 transition-all duration-300 cursor-pointer hover:scale-105 group">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(168,85,247,0.2),transparent_50%)]" />
+              <CardHeader className="relative z-10">
+                <div className="flex items-center space-x-3">
+                  <div className="h-12 w-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <BarChart3 className="h-6 w-6 text-white" />
                   </div>
-                  <CardTitle className="text-lg text-secondary">Analyze Resume</CardTitle>
+                  <div>
+                    <CardTitle className="text-lg text-white">Analyze Resume</CardTitle>
+                    <CardDescription className="text-gray-300 text-xs">ATS score & tips</CardDescription>
+                  </div>
                 </div>
-                <CardDescription>Get ATS compatibility score and tips</CardDescription>
               </CardHeader>
             </Card>
           </Link>
 
           <Link href="/matcher">
-            <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer glass-effect border-accent/20 hover:border-accent/40 group">
-              <CardHeader>
-                <div className="flex items-center space-x-2">
-                  <div className="h-10 w-10 bg-gradient-to-br from-accent to-primary rounded-lg flex items-center justify-center group-hover:from-primary group-hover:to-secondary transition-all duration-300 shadow-lg">
-                    <Target className="h-5 w-5 text-white" />
+            <Card className="border-0 bg-gradient-to-br from-emerald-500/10 via-slate-800/80 to-emerald-600/10 backdrop-blur-md shadow-2xl overflow-hidden hover:shadow-emerald-500/30 transition-all duration-300 cursor-pointer hover:scale-105 group">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.2),transparent_50%)]" />
+              <CardHeader className="relative z-10">
+                <div className="flex items-center space-x-3">
+                  <div className="h-12 w-12 bg-gradient-to-br from-emerald-400 to-teal-400 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <Target className="h-6 w-6 text-white" />
                   </div>
-                  <CardTitle className="text-lg text-accent">Job Matcher</CardTitle>
+                  <div>
+                    <CardTitle className="text-lg text-white">Job Matcher</CardTitle>
+                    <CardDescription className="text-gray-300 text-xs">Match against jobs</CardDescription>
+                  </div>
                 </div>
-                <CardDescription>Match resume against job descriptions</CardDescription>
               </CardHeader>
             </Card>
           </Link>
 
           <Link href="/ai-tools">
-            <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer glass-effect border-primary/20 hover:border-primary/40 group">
-              <CardHeader>
-                <div className="flex items-center space-x-2">
-                  <div className="h-10 w-10 bg-gradient-to-br from-primary via-secondary to-accent rounded-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 shadow-lg color-pulse">
-                    <Zap className="h-5 w-5 text-white" />
+            <Card className="border-0 bg-gradient-to-br from-cyan-500/10 via-slate-800/80 to-cyan-600/10 backdrop-blur-md shadow-2xl overflow-hidden hover:shadow-cyan-500/30 transition-all duration-300 cursor-pointer hover:scale-105 group">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(34,211,238,0.2),transparent_50%)]" />
+              <CardHeader className="relative z-10">
+                <div className="flex items-center space-x-3">
+                  <div className="h-12 w-12 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 animate-pulse">
+                    <Zap className="h-6 w-6 text-white" />
                   </div>
-                  <CardTitle className="text-lg bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                    AI Tools
-                  </CardTitle>
+                  <div>
+                    <CardTitle className="text-lg bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent">
+                      AI Tools
+                    </CardTitle>
+                    <CardDescription className="text-gray-300 text-xs">Letters, bios & more</CardDescription>
+                  </div>
                 </div>
-                <CardDescription>Cover letters, LinkedIn bios & more</CardDescription>
               </CardHeader>
             </Card>
           </Link>
@@ -124,29 +136,30 @@ export default function DashboardPage() {
 
         {/* Recent Resumes */}
         <div>
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-semibold bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-secondary via-accent to-purple-400 bg-clip-text text-transparent">
               Your Resumes
             </h2>
             <Link href="/builder">
-              <Button className="bg-gradient-to-r from-primary via-secondary to-accent hover:from-accent hover:via-primary hover:to-secondary transition-all duration-300 shadow-lg hover:shadow-xl">
-                <Plus className="h-4 w-4 mr-2" />
+              <Button className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 transition-all duration-300 shadow-xl hover:shadow-2xl px-8 py-6 text-lg">
+                <Plus className="h-5 w-5 mr-2" />
                 New Resume
               </Button>
             </Link>
           </div>
 
           {resumes.length === 0 ? (
-            <Card className="text-center py-12 glass-effect border-primary/20">
-              <CardContent>
-                <div className="h-12 w-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <FileText className="h-6 w-6 text-primary" />
+            <Card className="text-center py-16 border-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 backdrop-blur-md shadow-2xl overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.15),transparent_50%)]" />
+              <CardContent className="relative z-10">
+                <div className="h-20 w-20 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg animate-pulse">
+                  <FileText className="h-10 w-10 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2 text-primary">No resumes yet</h3>
-                <p className="text-muted-foreground mb-4">Create your first professional resume to get started</p>
+                <h3 className="text-2xl font-semibold mb-3 text-white">No resumes yet</h3>
+                <p className="text-gray-300 mb-6 text-lg">Create your first professional resume to get started</p>
                 <Link href="/builder">
-                  <Button className="bg-gradient-to-r from-primary via-secondary to-accent hover:from-accent hover:via-primary hover:to-secondary transition-all duration-300 shadow-lg hover:shadow-xl">
-                    <Plus className="h-4 w-4 mr-2" />
+                  <Button className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 transition-all duration-300 shadow-xl hover:shadow-2xl px-8 py-6 text-lg">
+                    <Plus className="h-5 w-5 mr-2" />
                     Create Resume
                   </Button>
                 </Link>
@@ -157,27 +170,28 @@ export default function DashboardPage() {
               {resumes.map((resume) => (
                 <Card
                   key={resume.id}
-                  className="hover:shadow-xl transition-all duration-300 glass-effect border-primary/20 hover:border-primary/40"
+                  className="border-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 backdrop-blur-md shadow-2xl overflow-hidden hover:shadow-blue-500/20 transition-all duration-300 hover:scale-105"
                 >
-                  <CardHeader>
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.08),transparent_50%)]" />
+                  <CardHeader className="relative z-10">
                     <div className="flex items-start justify-between">
                       <div>
-                        <CardTitle className="text-lg text-primary">{resume.title}</CardTitle>
-                        <CardDescription className="flex items-center space-x-2 mt-1">
-                          <Calendar className="h-3 w-3 text-secondary" />
+                        <CardTitle className="text-lg text-white">{resume.title}</CardTitle>
+                        <CardDescription className="flex items-center space-x-2 mt-2 text-gray-300">
+                          <Calendar className="h-3 w-3 text-blue-400" />
                           <span>Updated {new Date(resume.updatedAt).toLocaleDateString()}</span>
                         </CardDescription>
                       </div>
-                      <Button variant="ghost" size="sm" className="hover:bg-primary/10">
-                        <MoreVertical className="h-4 w-4 text-primary" />
+                      <Button variant="ghost" size="sm" className="hover:bg-blue-500/20 text-blue-300">
+                        <MoreVertical className="h-4 w-4" />
                       </Button>
                     </div>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="relative z-10">
                     <div className="flex items-center justify-between">
                       <Badge
                         variant="secondary"
-                        className="capitalize bg-gradient-to-r from-secondary/20 to-accent/20 text-secondary border-secondary/30"
+                        className="capitalize bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-300 border border-blue-500/40"
                       >
                         {resume.template}
                       </Badge>
@@ -185,14 +199,14 @@ export default function DashboardPage() {
                         <Button
                           variant="outline"
                           size="sm"
-                          className="border-primary/30 hover:bg-primary/10 text-primary hover:text-primary bg-transparent"
+                          className="border-blue-500/40 hover:bg-blue-500/20 text-blue-300 bg-transparent"
                         >
                           Edit
                         </Button>
                         <Button
                           variant="outline"
                           size="sm"
-                          className="border-secondary/30 hover:bg-secondary/10 text-secondary hover:text-secondary bg-transparent"
+                          className="border-purple-500/40 hover:bg-purple-500/20 text-purple-300 bg-transparent"
                         >
                           Download
                         </Button>

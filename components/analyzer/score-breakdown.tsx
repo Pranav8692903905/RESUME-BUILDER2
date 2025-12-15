@@ -35,11 +35,12 @@ export function ScoreBreakdown({ data }: ScoreBreakdownProps) {
   return (
     <div className="space-y-6">
       <div className="grid md:grid-cols-2 gap-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Score Categories</CardTitle>
+        <Card className="border-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 backdrop-blur-md shadow-2xl overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.1),transparent_50%)]" />
+          <CardHeader className="relative z-10">
+            <CardTitle className="text-white">Score Categories</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="relative z-10">
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={chartData}>
                 <CartesianGrid strokeDasharray="3 3" />
@@ -52,11 +53,12 @@ export function ScoreBreakdown({ data }: ScoreBreakdownProps) {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Section Scores</CardTitle>
+        <Card className="border-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 backdrop-blur-md shadow-2xl overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(168,85,247,0.1),transparent_50%)]" />
+          <CardHeader className="relative z-10">
+            <CardTitle className="text-white">Section Scores</CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="relative z-10">
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={sectionData}>
                 <CartesianGrid strokeDasharray="3 3" />
@@ -70,14 +72,15 @@ export function ScoreBreakdown({ data }: ScoreBreakdownProps) {
         </Card>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Detailed Breakdown</CardTitle>
+      <Card className="border-0 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 backdrop-blur-md shadow-2xl overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.1),transparent_50%)]" />
+        <CardHeader className="relative z-10">
+          <CardTitle className="text-white">Detailed Breakdown</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
-              <h4 className="font-semibold">Core Metrics</h4>
+              <h4 className="font-semibold text-white">Core Metrics</h4>
               <div className="space-y-3">
                 <div>
                   <div className="flex justify-between text-sm mb-1">
