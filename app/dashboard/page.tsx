@@ -22,7 +22,7 @@ export default function DashboardPage() {
     <div
       className="min-h-screen relative overflow-hidden"
       style={{
-        backgroundImage: "url('/AI-Job.avif')",
+        backgroundImage: "url('large.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center bottom',
         backgroundRepeat: 'no-repeat',
